@@ -1,0 +1,16 @@
+<div class="admin">
+  <div class="admin__box">
+      <table style="width:100%" >
+          <tr>
+            <th>Party Name <span>Vote Count</span></th>
+          </tr>
+          <tr *ngFor="let party of parties">
+            <td>{{party.candidateName}} <span> {{party.votingCount}}</span></td>
+            <td>
+             
+            </td> 
+          </tr>
+        </table>
+        <button type="button" (click)= "logout()">Logout</button>
+  </div>
+</div>

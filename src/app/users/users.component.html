@@ -1,0 +1,16 @@
+<div class="user">
+  <div class="user__box">
+      <table style="width:100%" >
+          <tr>
+            <th>Party Name <span>Elect</span></th>
+          </tr>
+          <tr *ngFor="let party of parties">
+            <td>{{party.candidateName}} <span> <button (click)="onClick(party._id)" [disabled]="hasVoted">Vote</button></span></td>
+            <td>
+             
+            </td> 
+          </tr>
+        </table>
+        <button type="button" (click)= "logout()">Logout</button>
+  </div>
+</div>
