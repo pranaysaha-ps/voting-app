@@ -32,12 +32,17 @@ password = '';
     };
 
     this.http.post('http://localhost:3000/users/login', login, options).subscribe((res)=>{
-      localStorage.setItem('token',res['token']);
-      if(res['data'].role === 'ADMIN') {
-        this.loginRouter.navigate(['admin']);
-      } else {
-        this.loginRouter.navigate(['users']);
-      }  
+      if(res['status'] === 'success') {
+        localStorage.setItem('token',res['token']);
+        if(res['data'].role === 'ADMIN') {
+          this.loginRouter.navigate(['admin']);
+        } else {
+          this.loginRouter.navigate(['users']);
+        }
+      } 
+    },
+    err => {
+      alert(err.error.message);
     });
   }
 }
