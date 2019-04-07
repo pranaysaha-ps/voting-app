@@ -22,9 +22,7 @@ import { UsersComponent } from './users/users.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [
-    // { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor , multi: true}
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
